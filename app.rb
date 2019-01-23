@@ -6,8 +6,14 @@ get '/' do
   'Hello world! I did it my way.'
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @firstname = params[:firstname]
+  @lastname = params[:lastname]
   erb(:index)
 end
 
